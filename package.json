@@ -1,0 +1,35 @@
+{
+  "name": "nodeblog",
+  "version": "1.0.0",
+  "description": "This is a blog site",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\" Error: No test Specified\\\" && exit 1\"",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamalabot/ExpressBlog.git"
+  },
+  "keywords": [
+    "blog",
+    "express",
+    "firstsite"
+  ],
+  "author": "bottingmaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kamalabot/ExpressBlog/issues"
+  },
+  "homepage": "https://github.com/Kamalabot/ExpressBlog#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "mongoose": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

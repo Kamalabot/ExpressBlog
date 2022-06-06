@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('layouts/header');-%>    
+    <body>
+        <%-include('layouts/navigation');-%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('/assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Create New posts</h1>
+                            <span class="subheading">Have questions? I have answers.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <form action="/post/store" method="POST" enctype="multipart/form-data">
+                        <p>Get Typing... Let me see how fast your fingers fly</p>
+                        <div class="my-5">
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" placeholder="Title" name="title" />
+                                    <label for="name">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="control-group">
+                                 <div class="form-group floating-label-form-group controls">
+                                    <label>Image</label>
+                                    <input type="file" class="form-control" id="image" name="image">
+                                 </div>
+                                </div>
+                                <div class="form-floating">
+                                    <label>Description</label>
+                                    <textarea class="form-control" id="body" rows=5 placeholder="body" name="body"></textarea>
+                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%-include('layouts/footer');-%>
+        <%-include('layouts/script');-%>
+    </body>
+</html>
