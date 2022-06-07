@@ -44,7 +44,7 @@ app.get('/post/new',(req,res) =>{
 })
 */
 
-app.use((req,res)=>res.render('notFound'));
+//app.use((req,res)=>res.render('notFound'));
 
 const expressSession = require('express-session');
 app.use(expressSession({
