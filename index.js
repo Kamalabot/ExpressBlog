@@ -17,10 +17,21 @@ mongoose.connect('mongodb+srv://bottingup:mhFSpF8aytE@cluster0.j5un5.mongodb.net
 
 app.use(express.static('public'));
 app.set('view engine','ejs');
+
+let port = process.env.PORT;
+if (port == null || port == ""){
+    port = 4000;
+}
+
+app.listen(port, ()=>{
+    console.log('App listening...')
+})
+
+/*
 app.listen(3000, ()=>{
     console.log('Listening on 3000');
 })
-
+*/
 /*
 app.get('/',(req, res) =>{
     res.json({
@@ -32,6 +43,28 @@ app.get('/post/new',(req,res) =>{
     res.render('create');
 })
 */
+
+app.use((req,res)=>res.render('notFound'));
+
+const expressSession = require('express-session');
+app.use(expressSession({
+    secret:'keycardBoart',
+    resave: true,
+    saveUninitialized: true
+    })
+)
+
+const loginController = require('./controllers/login');
+app.post('/auth/login',loginController);
+
+
+const loginUserController = require('./controllers/loginUser')
+app.post('/user/login',loginUserController)
+
+
+const storeUserController = require('./controllers/storeUser');
+app.post('/user/register',storeUserController);
+
 
 const newCreateController = require('./controllers/newPost');
 app.get('/post/new',newCreateController);
@@ -82,3 +115,7 @@ app.get('/post',async(req, res) =>{
     res.render('post');
 })
 */
+
+const newUserController = require('./controllers/newUser');
+app.get('/auth/register',newUserController);
+
